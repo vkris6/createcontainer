@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: buildah
+spec:
+  volumes:                          
+    - name: vol1 
+  containers:
+    - name: buildah
+      image: eu.gcr.io/newdemo-246311/buildah
+      securityContext:
+        privileged: true
+      args:
+      command: [ "/root/entrypoint.sh"]
+      env:
+      resources:
+        requests:
+          cpu: 250m
+          memory: 500Mi
+      volumeMounts:                 
+        - mountPath: /var/lib/containers
+          name: vol1 
+  restartPolicy: Never
+  imagePullSecrets:
+    - name: gcr-json-key

@@ -1,0 +1,9 @@
+.terraform
+key.json
+gkecheck/vendor/
+vendor/
+.bundle/
+.kitchen/
+Gemfile.lock
+test/fixtures/tf_module/errored.tfstate
+resources/aem_docker/buildah/.DS_Store
